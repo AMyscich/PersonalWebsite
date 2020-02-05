@@ -5,6 +5,9 @@
     <!-- Tab Name -->
     <title>Albin "Kyle" Myscich</title>
 
+    <!-- animated favicon related to mathematical spiral -->
+    <link rel="icon" href="gifs/spiral.gif" type="gif" >
+    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +15,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="script.php"></script>
 
 
     <!-- Optional JavaScript -->
@@ -41,7 +48,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">PROJECTS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html">PROFILE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html">PROFES IMG</a></li>
                     <li class="nav-item"><a class="nav-link" href="portfolio.html">PORTFOLIO</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.html">SERVICE</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
@@ -52,38 +59,43 @@
     </nav>
 
     <!-- Form inputs for contacting me -->
-    <form class="container-fluid padding" style="padding:10%">
+    <form class="container-fluid padding" id="contact-form" style="padding:10%" action="script.php" method="post" role="form">
         <!-- First row of inputs -->
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputPassword4">First Name</label>
-                <input type="text" class="form-control" placeholder="Enter Your First name">
+                <input type="text" name="fName" class="form-control" placeholder="Enter Your First Name" required="required" data-error="First Name is Required.">
+                <div class="help-block with-errors"></div>
             </div>
             <div class="form-group col-md-6">
                 <label for="text">Last Name</label>
-                <input type="text" class="form-control" placeholder="Enter Your Last name">
+                <input type="text" name="lName" class="form-control" placeholder="Enter Your Last Name" required="required" data-error="Last Name is Required.">
+                <div class="help-block with-errors"></div>
             </div>
         </div>
         <!-- Secoond row of inputs -->
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email">
+                <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Enter Your Email" required="required" data-error="Email is Required.">
+                <div class="help-block with-errors"></div>
             </div>
             <div class="form-group col-md-6">
-                <label for="text">Company/Organization</label>
-                <input type="text" class="form-control" placeholder="Enter Your Company/Organization">
+                <label for="form_phone">Phone Number</label>
+                <input type="tel" name="phone" class="form-control" placeholder="Enter Your Phone Number" required="required" data-error="Phone Number is Required.">
+                <div class="help-block with-errors"></div>
             </div>
         </div>
         <!-- Third row of input -->
         <div class="form-row">
             <div class="form-group col-md-12 ">
                 <label for="text">Message</label>
-                <input type="text" class="form-control" placeholder="What's on your Mind?">
+                <input type="text" name="message" class="form-control" placeholder="What's on your Mind?" required="required" data-error="Message is Required.">
+                <div class="help-block with-errors"></div>
             </div>
 
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary btn-send" value="Send message">Submit</button>
     </form>
 
 
